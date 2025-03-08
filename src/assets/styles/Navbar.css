@@ -1,0 +1,41 @@
+*{
+    font-family: "Poppins", serif;
+}
+
+.quizz-navbar {
+    height: 60px;
+    border-bottom: 1px solid rgb(112, 110, 110);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+
+   .techp-image{
+    height: 200px;
+    width: 250px;
+   }
+  .quizz-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .logout-btn{
+    font-size: 1.5rem;
+  }
+  .personal-img{
+    margin-right: 50px;
+  }
+
+  .personal-img img{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    
+  }
+
+  
+  
+  
+  

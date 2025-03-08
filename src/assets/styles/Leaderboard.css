@@ -1,0 +1,36 @@
+.top-ranks-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: -39px;
+}
+.rank-show{
+    text-align: center;
+}
+.user-name{
+    padding-top: 80px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.user-score{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.previous-ranks{
+    content: "";
+    position: relative;
+    box-shadow: 0px -8px 40px 0px #1C1C1E1A;
+    top: -18px;
+    background: #FFFFFF;
+    left: 0;
+    width: 104%;
+    height: 357px;
+    border-radius: 1521px / 143px;
+    margin-left: -39px;
+    margin-top: -68px;
+}
+.previous-ranks div{
+    position: relative;
+    top: 40px;
+}

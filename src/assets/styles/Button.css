@@ -1,0 +1,42 @@
+.signup-button{
+    width: 422px;
+    height: 43px;
+    padding: 12px 24px 12px 24px;
+    font-size: 1.2rem;
+    background-color: #F3BD00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.login-button{
+    width: 422px;
+    height: 43px;
+    padding: 12px 24px 12px 24px;
+    font-size: 1.2rem;
+    background-color: #F3BD00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+}
+.next-button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.9rem;
+    color: #0948B4;
+    margin-left: 83%;
+   position: relative;
+   top:-53px;
+}
+.previous-button{
+    margin-top: 40px;
+    font-size: 1.9rem;
+    color: #8E8E93;
+    background-color: transparent;
+    border: none;
+}

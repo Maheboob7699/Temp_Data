@@ -1,0 +1,130 @@
+*{
+    font-family: "Poppins", serif;
+}
+
+.signup-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizz-image{
+    width: 326.6px;
+    height: 330.98px;
+    margin-top: 240px;
+}
+
+.signup-form {
+    height: auto;
+    width: 440px;
+    margin-left: 140px;
+    margin-top: 100px;
+}
+.signup-form h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 2.2rem;
+    text-align: left;
+}
+.signup-form p{
+    color: gray;
+    text-align: left;
+}
+.required {
+    color: red;
+}
+.sigunp-user-error{
+    color: red;
+}
+
+ #user-name{
+    width: 400px;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #344054;
+    padding-left: 18px;
+}
+#user-email{
+    width: 400px;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #344054;
+    padding-left: 18px;
+}
+
+.user-password{
+    width: 400px;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    position: relative;
+    top: -13px;
+    margin-top: 10px;
+    border: 1px solid #344054;
+    padding-left: 18px;
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.user-password input{
+    border: none;
+    outline: none;
+}
+
+.hide-password-icon{
+    margin-left: 190px;
+}
+
+.signup-form div {
+    margin-top: 31px;
+}
+
+.sigunp-user-error {
+    color: red;
+}
+.check-terms {
+    margin-left: 25%;
+    margin-bottom: -26px;
+    position: relative;
+    bottom: 20px;
+}
+
+.check-terms span {
+    font-weight: 500;
+    color: #0948B4;
+    margin: 0,auto;
+}
+
+.google-icon{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 422px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.google-icon p{
+    color: black;
+}
+
+.switch-login{
+    padding-left: 25%;
+}
+
+a{
+    text-decoration: none;
+    color: #0948B4;
+}
+

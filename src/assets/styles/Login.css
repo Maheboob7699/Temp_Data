@@ -1,0 +1,108 @@
+*{
+    font-family: "Poppins", serif;
+}
+
+.login-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizz-image{
+    width: 326.6px;
+    height: 330.98px;
+    margin-top: 240px;
+}
+
+.login-form {
+    height: auto;
+    width: 440px;
+    margin-left: 140px;
+    margin-top: 100px;
+}
+.login-form  h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 2.2rem;
+    text-align: left;
+}
+.login-form  p{
+    color: gray;
+    text-align: left;
+}
+.required {
+    color: red;
+}
+
+#user-email{
+    width: 400px;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #344054;
+    padding-left: 18px;
+}
+.login-user-error{
+    color: red;
+}
+
+.user-password{
+    width: 400px;
+    height: 40px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    position: relative;
+    top: -13px;
+    margin-top: 10px;
+    border: 1px solid #344054;
+    padding-left: 18px;
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.user-password input{
+    border: none;
+
+}
+.hide-password-icon{
+    margin-left: 190px;
+}
+
+.login-form  div {
+    margin-top: 31px;
+}
+
+.sigunp-user-error {
+    color: red;
+}
+
+
+.google-icon{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 422px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.google-icon p{
+    color: black;
+}
+
+.switch-login{
+    padding-left: 25%;
+}
+
+a{
+    text-decoration: none;
+    color: #0948B4;
+}
+
