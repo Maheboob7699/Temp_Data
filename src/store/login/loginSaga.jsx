@@ -1,6 +1,6 @@
 import axios from "axios";
 import { takeLatest, put } from "redux-saga/effects";
-import { Fetch_Login,Login_Add, Fetch_Login_Add, Fetch_Login_Sucess, Update_User_Data } from "./loginReducer";
+import { Fetch_Login,Login_Add, Fetch_Login_Add, Fetch_Login_Sucess,  Fetch_Updated_User_Data,Update_User_Data } from "./loginReducer";
 
 function* fetchLoginSaga() {
     try {
@@ -34,9 +34,9 @@ function* updateUserSaga(action) {
         let updatedUser = {
             ...existingUser,
             score: Math.max(existingUser.score, score),
-            users: [
-                ...(existingUser.users || []),
-                { question, selectedAnswers, score }
+            user: [
+                ...(existingUser.user || []),
+                { question:question, selectedAnswers:selectedAnswers,score:score }
             ]
         };
 
@@ -53,5 +53,5 @@ function* updateUserSaga(action) {
 export function* loginSaga() {
     yield takeLatest(Fetch_Login.type, fetchLoginSaga);
     yield takeLatest(Fetch_Login_Add.type, addUserSaga);
-    yield takeLatest(Update_User_Data.type, updateUserSaga);
+    yield takeLatest( Fetch_Updated_User_Data.type, updateUserSaga);
 }

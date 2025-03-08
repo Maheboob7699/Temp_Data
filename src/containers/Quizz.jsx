@@ -140,7 +140,7 @@ import Button from '../components/common/Button';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Fetch_Question } from '../store/question/questionReducers';
-import { Update_User_Data } from '../store/login/loginReducer';
+import { Fetch_Updated_User_Data } from '../store/login/loginReducer';
 
 
 function Quizz() {
@@ -177,11 +177,11 @@ function Quizz() {
 
         else {
             
-                dispatch(Update_User_Data({
+                dispatch(Fetch_Updated_User_Data({
                     id: uniqueId,
                     question: question,
                     selectedAnswers: selectedAnswers,
-                    score: score
+                    score:score
                         }));
                 alert("Quiz submitted successfully!");
             }

@@ -23,6 +23,10 @@ const loginSlice = createSlice({
             state.loginUser =[...state.loginUser,action.payload];
         },
 
+        Fetch_Updated_User_Data:(state,action)=>{
+
+        },
+
         Update_User_Data: (state, action) => {
             const { id, question, selectedAnswers, score } = action.payload;
             state.loginUser = state.loginUser.map(user =>
@@ -33,9 +37,9 @@ const loginSlice = createSlice({
                         user: [
                             ...(user.user || []),
                             {
-                                question,
-                                selectedAnswers,
-                                score
+                               question: question,
+                               selectedAnswers: selectedAnswers,
+                               score: score
                             }
                         ]
                     }
@@ -45,5 +49,5 @@ const loginSlice = createSlice({
     }
 });
 
-export const { Fetch_Login,Login_Add, Fetch_Login_Add, Fetch_Login_Sucess, Update_User_Score,Update_User_Data } = loginSlice.actions;
+export const { Fetch_Login,Login_Add, Fetch_Login_Add, Fetch_Login_Sucess, Update_User_Score, Fetch_Updated_User_Data,Update_User_Data } = loginSlice.actions;
 export default loginSlice.reducer;
