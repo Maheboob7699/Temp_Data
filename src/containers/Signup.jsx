@@ -40,7 +40,7 @@ function Signup() {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-      dispatch(Fetch_User())
+    //   dispatch(Fetch_User())
     },[])
 
 
@@ -64,7 +64,7 @@ function Signup() {
     // login page
     useEffect(() => {
         if (loginPage) {
-            navigate("./login")
+            navigate("/login")
         }
     }, [loginPage])
 

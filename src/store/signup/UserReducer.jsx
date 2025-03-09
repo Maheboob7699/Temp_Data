@@ -33,13 +33,16 @@ const signupSlice = createSlice({
       
          if (!isUserExist) {
             state.showUser = [...state.showUser,action.payload]
-            state.uniqueId+=1;
          }
+      },
+
+      Fetch_Updated_UniqueId:(state,action)=>{
+         state.uniqueId = action.payload
       }
    }
 
 
 })
 
-export const { Fetch_User, Fetch_Success, Fetch_Error, Fetch_Add_User, Add_User } = signupSlice.actions;
+export const { Fetch_User, Fetch_Success, Fetch_Error, Fetch_Add_User, Add_User,Fetch_Updated_UniqueId } = signupSlice.actions;
 export default signupSlice.reducer;

@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Fetch_Login_Add } from '../store/login/loginReducer';
+import { Fetch_Add_User, Fetch_User } from '../store/signup/UserReducer';
+
 
 let loginInitialInput = {
     email: "",
@@ -19,12 +21,27 @@ function Login() {
     const [loginData, setLoginData] = useState([]);
     const [hideShow, setHideShow] =useState(false);
     const [quizzPage, setQuizzPage] = useState(false);
+    const [maxiId, setMaxId] = useState(0);
 
-    const {showUser, uniqueId} = useSelector((state)=>state.signupUsers);
-    const { loginUser,} = useSelector((state)=>state.loginUsers);
+    const {showUser,uniqueId} = useSelector((state)=>state.signupUsers);
+    const { loginUser} = useSelector((state)=>state.loginUsers);
   
     console.log("show user is",showUser);
     console.log("login user is",loginUser);
+    console.log("unique id",uniqueId);
+
+    useEffect(() => {
+        if (showUser.length > 0) {
+          const maxValue = Math.max(...showUser.map(user => user.id));
+          setMaxId(maxValue);
+        }
+      }, [showUser])
+      console.log("ma xid", maxiId);
+      
+   
+        useEffect(()=>{
+          dispatch(Fetch_User())
+        },[])
     
     
 
@@ -81,7 +98,7 @@ function Login() {
 
           if(userFind){
                     let userData = {
-                        id:userFind.id,
+                        id:uniqueId,
                         name: userFind.name,
                         email: userFind.email,
                         score: 0,

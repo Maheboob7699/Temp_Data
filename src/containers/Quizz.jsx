@@ -151,6 +151,8 @@ function Quizz() {
     const { uniqueId } = useSelector((state) => state.signupUsers);
 
    console.log("uniqueId",uniqueId );
+   console.log("loginUser",loginUser);
+   
    
 
     useEffect(() => {
