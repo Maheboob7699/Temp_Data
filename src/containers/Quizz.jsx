@@ -140,7 +140,8 @@ import Button from '../components/common/Button';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Fetch_Question } from '../store/question/questionReducers';
-import { Fetch_Updated_User_Data } from '../store/login/loginReducer';
+import { Fetch_Updated_User_Data,Fetch_Login } from '../store/login/loginReducer';
+import { Fetch_User, Fetch_Updated_UniqueId } from '../store/signup/UserReducer';
 
 
 function Quizz() {
@@ -148,12 +149,24 @@ function Quizz() {
 
     const { question } = useSelector((state) => state.questions);
     const { loginUser } = useSelector((state) => state.loginUsers);
-    const { uniqueId } = useSelector((state) => state.signupUsers);
+    const {uniqueId} = useSelector((state) => state.signupUsers);
+    const [maxiId, setMaxId] = useState(0);    
 
-   console.log("uniqueId",uniqueId );
    console.log("loginUser",loginUser);
+
+
+   useEffect(()=>{
+    dispatch(Fetch_Login())
+   },[])
    
-   
+   useEffect(() => {
+    if (loginUser.length > 0) {
+      const maxValue = Math.max(...loginUser.map(user => user.id));
+      setMaxId(maxValue);
+      dispatch(Fetch_Updated_UniqueId(maxValue))
+    }
+  }, [loginUser])
+  console.log("uniqueId is",uniqueId);
 
     useEffect(() => {
         console.log("Dispatching Fetch_Question Action...");
@@ -168,6 +181,8 @@ function Quizz() {
     const [progressBar, setProgressBar] = useState(10);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [quizzCompleted, setQuizzCompleted] = useState(false);
+  
+    
 
     function handleNext() {
         if (quizzIndex < question.length - 1) {
@@ -178,12 +193,15 @@ function Quizz() {
 
 
         else {
+            console.log("unigue id",uniqueId);
+            console.log("question is",question);
+            console.log("slected answer is",selectedAnswers);
             
                 dispatch(Fetch_Updated_User_Data({
-                    id: uniqueId,
-                    question: question,
-                    selectedAnswers: selectedAnswers,
-                    score:score
+                    uniqueId,
+                    question,
+                    selectedAnswers,
+                    score
                         }));
                 alert("Quiz submitted successfully!");
             }

@@ -21,7 +21,7 @@ function Login() {
     const [loginData, setLoginData] = useState([]);
     const [hideShow, setHideShow] =useState(false);
     const [quizzPage, setQuizzPage] = useState(false);
-    const [maxiId, setMaxId] = useState(0);
+    
 
     const {showUser,uniqueId} = useSelector((state)=>state.signupUsers);
     const { loginUser} = useSelector((state)=>state.loginUsers);
@@ -30,14 +30,6 @@ function Login() {
     console.log("login user is",loginUser);
     console.log("unique id",uniqueId);
 
-    useEffect(() => {
-        if (showUser.length > 0) {
-          const maxValue = Math.max(...showUser.map(user => user.id));
-          setMaxId(maxValue);
-        }
-      }, [showUser])
-      console.log("ma xid", maxiId);
-      
    
         useEffect(()=>{
           dispatch(Fetch_User())
@@ -52,23 +44,6 @@ function Login() {
     useEffect(() => {
     }, [loginInput])
     console.log(loginInput);
-
-    // Load signup data from local storage when the component mounts
-    // useEffect(() => {
-    //     const loadSignupData = JSON.parse(localStorage.getItem("users")) || [];
-    //     setSignupData(loadSignupData);
-    // }, []);
-
-
-
-
-    //store data of login form in lcoal Storage
-    // useEffect(() => {
-    //     let existingUsers = JSON.parse(localStorage.getItem("userDetails")) || [];
-    //     setLoginData(existingUsers);
-    // }, [])
-    // console.log(signupData);
-
 
     // navigate to quizz page
 

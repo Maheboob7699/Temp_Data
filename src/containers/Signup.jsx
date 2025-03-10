@@ -40,7 +40,7 @@ function Signup() {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-    //   dispatch(Fetch_User())
+      dispatch(Fetch_User())
     },[])
 
 

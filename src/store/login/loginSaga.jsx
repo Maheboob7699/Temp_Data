@@ -24,9 +24,12 @@ function* addUserSaga(action) {
 
 function* updateUserSaga(action) {
     try {
-        let { id, question, selectedAnswers, score } = action.payload;
-
-        let response = yield axios.get(`https://json-server-2-aggn.onrender.com/userDetails/${Number(id)}`);
+        let { uniqueId, question, selectedAnswers, score } = action.payload;
+        console.log("id",uniqueId)
+        console.log("question",question);
+        console.log("selectedAnswers",selectedAnswers);
+        
+        let response = yield axios.get(`https://json-server-2-aggn.onrender.com/userDetails/${Number(uniqueId)}`);
         let existingUser = response.data;
         console.log("existingUser",existingUser);
         
@@ -39,12 +42,14 @@ function* updateUserSaga(action) {
                 { question:question, selectedAnswers:selectedAnswers,score:score }
             ]
         };
+        console.log(updatedUser);
+        
 
-        yield axios.put(`https://json-server-2-aggn.onrender.com/userDetails/${id}`, updatedUser, {
+        yield axios.put(`https://json-server-2-aggn.onrender.com/userDetails/${uniqueId}`, updatedUser, {
             headers: { "Content-Type": "application/json" }
         });
 
-        yield put(Update_User_Data(updatedUser));
+        yield put(Update_User_Data({ uniqueId, question, selectedAnswers, score }));
     } catch (error) {
         console.error("Error updating user score",error);
     }

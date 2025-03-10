@@ -28,17 +28,24 @@ const loginSlice = createSlice({
         },
 
         Update_User_Data: (state, action) => {
-            const { id, question, selectedAnswers, score } = action.payload;
+            console.log("action .payload data",action.payload);
+            const {uniqueId, question, selectedAnswers, score } = action.payload;
+            console.log("selected answer",selectedAnswers);
+            console.log('question is',question);
+            console.log("score is",score);
+            
+            
+            
             state.loginUser = state.loginUser.map(user =>
-                user.id === id
+                user.id === uniqueId
                     ? {
                         ...user,
                         score: Math.max(user.score, score),
                         user: [
-                            ...(user.user || []),
+                            ...user.user,
                             {
-                               question: question,
-                               selectedAnswers: selectedAnswers,
+                               question:question,
+                               selectedAnswers:selectedAnswers,
                                score: score
                             }
                         ]
