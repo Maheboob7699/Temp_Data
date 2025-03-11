@@ -153,6 +153,8 @@ function Quizz() {
     const [maxiId, setMaxId] = useState(0);    
 
    console.log("loginUser",loginUser);
+  
+   
 
 
    useEffect(()=>{
@@ -181,6 +183,7 @@ function Quizz() {
     const [progressBar, setProgressBar] = useState(10);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [quizzCompleted, setQuizzCompleted] = useState(false);
+    console.log("selectedAnswers",selectedAnswers);
   
     
 
