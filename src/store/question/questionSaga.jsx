@@ -29,11 +29,12 @@ const getRandomQuestions = (questions) => {
 
 function* quizzQuestionSaga() {
     try {
+        // loading start
         const { data } = yield axios.get('https://json-server-2-aggn.onrender.com/questions');
 
         if (data.length >= 10) {
             let randomQuestions = getRandomQuestions(data);
-            yield put(Fetch_Question_Success(randomQuestions));
+            yield put(Fetch_Question_Success(randomQuestions)); // stop
         } else {
             yield put(Fetch_Question_Error("Not enough questions available"));
         }

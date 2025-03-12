@@ -115,6 +115,7 @@ function Signup() {
     
         if (duplicateData) {
             alert("User already exists");
+            return
         }
     
         const userData = {

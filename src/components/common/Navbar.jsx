@@ -9,7 +9,7 @@ function Navbar({name}) {
                     <img src="src/assets/images/techpatshala.svg" alt="" className='techp-image' />
                 </div>
                 <div className='quizz-detail'>
-                    <h2 className='current-user'>{name ? name:null} </h2>
+                    <h2 className='current-user'>{name ? name : ""} </h2>
                     <div>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} className='logout-btn' />
                     </div>
