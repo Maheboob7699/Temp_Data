@@ -22,7 +22,7 @@ function Quizz() {
     const [score, setScore] = useState(0);
     const [progressBar, setProgressBar] = useState(10);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
-    const [quizzCompleted, setQuizzCompleted] = useState(false);
+    const [quizzCompleted, setQuizzCompleted] = useState(true);
     const [sortUser, setSortUser] = useState([]);
 
     useEffect(() => {
@@ -131,7 +131,7 @@ function Quizz() {
             ) : (
                 <>
                     <h1>Leaderboard</h1>
-                    <h2 className='rank-show'>Wow! Your rank is # </h2>
+                    <h2 className='rank-show'>Wow! Your rank is # {uniqueId}</h2>
                     <div className="top-ranks-container">
                         <TopRank rankClassName="rank-2" user={sortUser[1]} image="src/assets/images/person2.jpg" />
                         <TopRank rankClassName="rank-1" user={sortUser[0]} image="src/assets/images/person.jpg" />
