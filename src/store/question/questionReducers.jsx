@@ -19,6 +19,7 @@ const questionSlice = createSlice({
         Fetch_Question_Error:(state,action)=>{
             state.error = action.payload
         },
+        
 
     }
 })

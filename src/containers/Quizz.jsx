@@ -22,7 +22,7 @@ function Quizz() {
     const [score, setScore] = useState(0);
     const [progressBar, setProgressBar] = useState(10);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
-    const [quizzCompleted, setQuizzCompleted] = useState(true);
+    const [quizzCompleted, setQuizzCompleted] = useState(false);
     const [sortUser, setSortUser] = useState([]);
 
     useEffect(() => {
@@ -147,5 +147,6 @@ function Quizz() {
         </>
     );
 }
+
 
 export default Quizz;
