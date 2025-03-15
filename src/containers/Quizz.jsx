@@ -44,6 +44,12 @@ function Quizz() {
     const activeUser = loginUser.find(user => user.id === uniqueId);
 
     function handleNext() {
+        console.log(quizzIndex);
+        
+        if (!selectedAnswers[quizzIndex]) {
+            alert("Please select an option");
+            return; 
+        }
         if (question.length > 0 && quizzIndex < question.length - 1) {
             setQuizzIndex(prevIndex => prevIndex + 1);
             setProgressBar(prevProgress => prevProgress + (100 / question.length));
@@ -58,6 +64,8 @@ function Quizz() {
             alert("Quiz submitted successfully!");
             setQuizzCompleted(true);
         }
+        console.log("selectedAnswers",selectedAnswers);
+        
     }
 
     function handlePrevious() {
@@ -72,7 +80,7 @@ function Quizz() {
 
     function handleOption(text) {
         setSelectedOption(text);
-
+        console.log(text);
         setSelectedAnswers(prev => {
             const updatedAnswers = [...prev];
             const existingIndex = updatedAnswers.findIndex(ans => ans.id === quizzIndex);
